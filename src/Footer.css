@@ -1,0 +1,102 @@
+/* src/components/Footer/Footer.css */
+
+.footer {
+    background-color: #27251e; /* Σκούρο χρώμα, τυπικό για footer */
+    color: #f0f0f0;
+    padding-top: 50px;
+    font-size: 0.95em;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+    flex-wrap: wrap; /* Για να σπάει σε μικρότερες οθόνες */
+}
+
+.footer-section {
+    flex: 1; /* Κάθε section πιάνει ίσο χώρο */
+    min-width: 250px; /* Ελάχιστο πλάτος για να μην συμπιέζεται */
+    margin-bottom: 30px;
+}
+
+.footer-section h2 {
+    color: #30a5cc; /* Το μπλε χρώμα της επικεφαλίδας */
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #30a5cc;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+/* Links και Λίστες */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-section a {
+    color: #f0f0f0;
+    text-decoration: none;
+    transition: color 0.3s;
+    margin-left: 10px;
+}
+
+.footer-section a:hover {
+    color: #30a5cc;
+}
+
+.icon {
+    margin-right: 5px;
+    color: #30a5cc;
+}
+
+/* Social Media Styling */
+.social-links a {
+    font-size: 1.8em;
+    margin-right: 15px;
+    color: #f0f0f0;
+}
+
+.social-links a:hover {
+    color: #30a5cc;
+}
+
+/* Bottom Copyright Bar */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 20px 0;
+    background-color: #1a1917;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Media Query για μικρές οθόνες */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        min-width: 90%;
+    }
+
+    .footer-section ul {
+        text-align: left;
+    }
+}

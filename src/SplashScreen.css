@@ -1,0 +1,49 @@
+/* src/components/SplashScreen/SplashScreen.css */
+
+.splash-screen {
+  position: fixed; /* Καλύπτει όλο το viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #30a5cc; /* Το χρώμα της σχολής */
+  color: white;
+  z-index: 9999; /* Πολύ υψηλό z-index για να είναι πάνω από όλα */
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Ομαλή εξαφάνιση (fade out) */
+  opacity: 1;
+  filter: blur(0px) brightness(1); 
+  transition: opacity 0.5s ease-out, filter 0.5s ease-out;
+}
+.splash-screen.flash-effect {
+  /* Εφαρμόζει το blur και κάνει τα χρώματα πιο φωτεινά στιγμιαία */
+  filter: blur(8px) brightness(1.5); 
+}
+
+/* Όταν το component κρύβεται (δεν εφαρμόζεται, αλλά το αφήνουμε για μελλοντική χρήση */
+/* .splash-screen.hidden { opacity: 0; pointer-events: none; } */
+
+
+.splash-content {
+    text-align: center;
+}
+
+/* --- Loader Spinner Styling (Απλό Animation) --- */
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite; /* Animation name, duration, timing, repetition */
+  margin: 20px auto 0;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

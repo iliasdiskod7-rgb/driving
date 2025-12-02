@@ -1,0 +1,9 @@
+* {
+  box-sizing: border-box; /* Η πιο σημαντική διόρθωση */
+}
+
+/* Επίσης, βεβαιωθείτε ότι δεν υπάρχει margin ή padding στο <body> */
+body {
+  margin: 0;
+  padding: 0;
+}
