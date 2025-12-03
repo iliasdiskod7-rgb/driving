@@ -1,24 +1,29 @@
-/* src/components/Header/Header.css */
+/* src/components/Header/Header.css: ΤΕΛΙΚΗ ΕΚΔΟΣΗ */
+
+/* --- 1. ΒΑΣΙΚΟ HEADER & LOGO --- */
 
 .header {
-  background-color: #30a5cc;
+  background-color: #30a5cc; /* Μπλε χρώμα */
   color: white;
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position:fixed;
-    top:0;
-    left:0;
-width:100%;
-  height:100px;
+  position: fixed; /* Κολλημένο στην κορυφή */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 100;}
+  z-index: 1000; /* Πολύ ψηλό z-index */
+}
 
 .logo {
   font-size: 1.5em;
   font-weight: bold;
 }
+
+/* --- 2. ΣΥΝΔΕΣΜΟΙ ΠΛΟΗΓΗΣΗΣ --- */
 
 .nav-list {
   list-style: none;
@@ -29,6 +34,7 @@ width:100%;
 
 .nav-item {
   margin-left: 30px;
+  position: relative; /* ΚΡΙΣΙΜΟ: Γονέας για το απόλυτο dropdown */
 }
 
 .nav-item a {
@@ -38,8 +44,94 @@ width:100%;
   padding: 5px 10px;
   transition: color 0.3s;
   font-family: Verdana, sans-serif;
+  display: inline-block; /* Για να λειτουργεί το padding/hover σωστά */
 }
 
 .nav-item a:hover {
-  color: #27251e; /* Ένα κίτρινο για το hover, τυπικό για οχήματα */
+  color: #1b6075; 
+}
+
+/* --- 3. DROP DOWN LOGIC (ΑΠΟΚΡΥΨΗ/ΕΜΦΑΝΙΣΗ) --- */
+
+.dropdown-menu-wrapper {
+  position: relative; 
+  display: inline-block; 
+}
+
+/* ΚΡΥΒΕΙ ΟΛΑ τα dropdowns από προεπιλογή */
+.dropdown-content {
+  display: none !important; 
+  position: absolute;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+  z-index: 2000;
+  padding: 0; 
+  list-style: none;
+  background-color: #333; 
+}
+
+/* ΕΜΦΑΝΙΣΗ LEVEL 1: Όταν κάνουμε hover στον wrapper */
+.dropdown-menu-wrapper:hover .level-1 {
+  display: block !important; /* Εμφανίζεται κάθετα */
+}
+
+/* --- 4. LEVEL 1 STYLING (Μοτοσυκλέτες, Αυτοκίνητο, Επαγγελματικά) --- */
+
+.level-1 {
+  top: 100%; /* Κάτω από τον σύνδεσμο 'Διπλώματα' */
+  left: 0px; 
+  display: block; 
+  min-width: 200px; /* Επαρκές πλάτος */
+  background-color: #27251e; /* Πιο σκούρο φόντο */
+  border-radius: 0 0 5px 5px;
+}
+
+.dropdown-item-level-1 {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0;
+  position: relative; /* ΚΡΙΣΙΜΟ: Γονέας για το Level 2 */
+}
+
+.dropdown-item-level-1:last-child {
+  border-bottom: none; 
+}
+
+/* Link του Level 1 */
+.dropdown-item-level-1 a {
+  display: block;
+  padding: 12px 20px;
+  color: #fff;
+  font-weight: bold;
+}
+.dropdown-item-level-1 a:hover {
+  background-color: #3f3f3f;
+  color: #30a5cc;
+}
+
+/* --- 5. LEVEL 2 STYLING (ΑΜ, Α1, Β, C) --- */
+
+.level-2 {
+  top: 0; /* Κολλάει στην κορυφή του Level 1 item */
+  left: 99%; /* Βγαίνει ακριβώς στα δεξιά */
+  min-width: 150px;
+  background-color: #444033;
+  z-index: 2001;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* ΕΜΦΑΝΙΣΗ LEVEL 2 ΜΕ HOVER */
+.dropdown-item-level-1:hover .level-2 {
+  display: block; /* Αυτό είναι το trigger για το Level 2 */
+}
+
+/* Link του Level 2 */
+.dropdown-item-level-2 a {
+  display: block;
+  padding: 8px 15px; /* Επαρκές padding για εύκολο hover */
+  color: #ccc;
+  font-weight: normal;
+}
+
+.dropdown-item-level-2 a:hover {
+  background-color: #3f3f3f;
+  color: #ffc107;
 }

@@ -1,0 +1,156 @@
+/* src/pages/About.css */
+.content-layout {
+    display: flex;
+    gap: 40px; /* Απόσταση μεταξύ κειμένου και εικόνας */
+    align-items: flex-start; 
+    margin-bottom: 80px; /* Ευθυγραμμίζει τα στοιχεία στην κορυφή */
+    background-color: #000000;
+}
+.about-page-wrapper {
+   max-width: 5000px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 100px; /* Για να μην κρύβεται κάτω από το Header */
+    line-height: 1.8;
+     background-color: #000000;
+
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #30a5cc;
+}
+.page-header p {
+    font-size: 1.2em;
+    color: #d3d3d3;
+}
+
+.page-header h1 {
+    font-size: 2.5em;
+    color: #f0efed;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    color: #eeeeee;
+    font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+    
+}
+
+.fleet-stats {
+    background-color: #000000;
+    padding: 30px;
+    margin: 30px 0;
+}
+
+.fleet-stats ul {
+    list-style: none;
+    padding: 10px 0;
+}
+
+.fleet-stats li {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #30a5cc;
+}
+
+.final-message {
+    font-style: italic;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px dashed #ccc;
+}
+.about-image-container {
+    flex: 1; /* Δίνει λιγότερο χώρο στην εικόνα (π.χ., 40%) */
+    min-width: 0;
+    padding-top: 20px; /* Λίγο περιθώριο από πάνω */
+}
+
+
+
+
+/* Media Query για μικρές οθόνες: Βάζουμε την εικόνα κάτω από το κείμενο */
+@media (max-width: 900px) {
+    .content-layout,
+    .reverse-order {
+        flex-direction: column;
+    }
+    .about-image-container {
+        order: -1; /* Τοποθετεί την εικόνα πάνω από το κείμενο σε κινητά */
+        padding-top: 0;
+        margin-bottom: 20px;
+        width:100%
+    }
+}
+.about-content {
+    flex: 2; /* Κείμενο: 66.6% */
+    min-width: 0; 
+}
+
+.cta-button-about {
+    display: inline-block;
+    background-color: #30a5cc; 
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button-about:hover {
+    background-color: #2481a3;
+}
+/* src/pages/About.css */
+
+.about-image-container img {
+    width: 100%; 
+    
+    /* Θέστε ένα μέγιστο ύψος για έλεγχο, αλλά αφήστε το auto για responsive */
+    max-height: 400px; 
+    
+    /* Καλύπτει το χώρο */
+    object-fit: cover; 
+    
+    height: 100%; /* Για να πιάνει το 100% του max-height */
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+main {
+    /* Βεβαιωθείτε ότι δεν έχει αχρείαστα ύψη ή padding */
+    padding-bottom: 0; 
+}
+/* src/pages/About.css */
+
+/* -------------------------------------- */
+/* ΝΕΟ: Κανόνες για το Fade-in Effect */
+/* -------------------------------------- */
+
+/* Αρχική κατάσταση (εφαρμόζεται πριν φορτωθεί η εικόνα) */
+.image-loading {
+    opacity: 0;
+    /* Η μετάβαση εφαρμόζεται σε όλα τα img, αλλά ενεργοποιείται μόνο 
+       όταν αλλάζει η opacity από 0 σε 1 */
+    transition: opacity 2s ease-in-out; 
+}
+
+/* Τελική κατάσταση (εφαρμόζεται αφού φορτωθεί η εικόνα) */
+.image-fade-in {
+    opacity: 1;
+}
+
+/* Βεβαιωθείτε ότι ο κανόνας του image-container δεν ακυρώνει την opacity */
+.about-image-container img {
+    /* ... (width, height, object-fit κλπ) ... */
+    
+    /* Θα εφαρμοστούν οι κλάσεις image-loading/image-fade-in σε αυτό το στοιχείο */
+    display: block; /* Για να λειτουργεί σωστά το transition */
+}
