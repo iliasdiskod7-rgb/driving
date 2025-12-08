@@ -1,5 +1,4 @@
 // src/components/HeroSlider/HeroSlider.tsx
-
 import React, { useState, useEffect,useMemo,useRef } from 'react';
 import './HeroSlider.css';
 
@@ -112,6 +111,7 @@ const containerStyle = {
           />
         ))}
       </div>
+      
     </div>
   );
 };

@@ -83,7 +83,7 @@ const Header: React.FC = () => {
                     {item.subCategories.map((sub, subIndex) => (
                       <li key={subIndex} className="dropdown-item-level-1">
                         {/* Ελέγχουμε για το δεύτερο επίπεδο (ΑΜ, Β, C) */}
-                        <div style={{ position: 'relative' }}>
+                     
                         <Link to={sub.path}>{sub.title}</Link>
                         {sub.nestedCategories && (
                           <ul className="dropdown-content level-2">
@@ -94,7 +94,6 @@ const Header: React.FC = () => {
                             ))}
                           </ul>
                         )}
-                        </div>
                       </li>
                     ))}
                   </ul>

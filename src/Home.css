@@ -1,0 +1,285 @@
+/* src/pages/Home.css (Προσθήκη στο τέλος) */
+
+.why-choose-us-section {
+    padding: 80px 20px;
+    background-color: #f4f4f4; /* Πολύ ανοιχτό γκρι φόντο */
+}
+
+.section-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 50px;
+    align-items: center; 
+}
+
+/* --- ΑΡΙΣΤΕΡΗ ΠΛΕΥΡΑ (Τίτλοι & Blocks) --- */
+
+.left-side-content {
+    flex: 1; 
+    min-width: 450px;
+}
+
+.subtitle {
+    color: #30a5cc; 
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.left-side-content h2 {
+    font-size: 3em;
+    color: #27251e; 
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+/* --- ΔΕΞΙΑ ΠΛΕΥΡΑ (Εικόνα) --- */
+
+.right-side-image {
+    flex: 1;
+    min-width: 350px;
+}
+
+.right-side-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* --- GRID ΓΙΑ ΤΑ 4 BLOCKS --- */
+
+.features-grid {
+    display: grid;
+    /* 2 στήλες με 20px κενό μεταξύ τους */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+}
+
+.feature-block {
+    background-color: #ffffff; /* Λευκό φόντο */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: auto; 
+    transition: transform 0.3s;
+}
+
+.feature-block:hover {
+    transform: translateY(-5px); /* Εφέ ανασήκωσης στο hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.feature-block h3 {
+    color: #30a5cc; /* Γαλάζιο τίτλων */
+    font-size: 1.2em;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.feature-block p {
+    color: #555;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+.icon-badge {
+    color: #30a5cc;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 992px) {
+    .section-content-wrapper {
+        flex-direction: column; /* Στοίχιση σε στήλη */
+    }
+    .left-side-content, .right-side-image {
+        min-width: 100%;
+        order: 1; /* H εικόνα πάει κάτω */
+    }
+    .right-side-image {
+        order: 0; /* Η εικόνα πάει πάνω */
+    }
+}
+@media (max-width: 550px) {
+    .features-grid {
+        /* Σε πολύ μικρές οθόνες, μία στήλη */
+        grid-template-columns: 1fr; 
+    }
+}
+/* src/pages/Home.css (Προσθήκη στο τέλος) */
+
+/* --- TESTIMONIALS SECTION --- */
+
+.testimonials-section {
+    padding: 80px 20px;
+    background-color: #333; /* Σκούρο φόντο για αντίθεση με το προηγούμενο section */
+    color: white;
+}
+
+.testimonials-section .page-header h1 {
+    color: white; /* Άσπρο χρώμα για τον τίτλο */
+    border-bottom-color: #30a5cc;
+}
+
+.testimonials-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    display: grid;
+    /* Εμφανίζει 3 κάρτες σε κάθε σειρά, με δυνατότητα scroll */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    padding-top: 30px;
+    
+    /* Αν θέλετε οριζόντιο scroll (π.χ., αν έχετε πολλές κριτικές): */
+    /* overflow-x: auto; 
+    white-space: nowrap; */ 
+}
+
+.testimonial-card {
+    background-color: #27251e; /* Πιο σκούρο από το φόντο του section */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.rating {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    letter-spacing: 5px;
+}
+
+.quote {
+    font-style: italic;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.author {
+    font-weight: bold;
+    color: #30a5cc;
+    text-align: right;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 992px) {
+    .testimonials-container {
+        /* Σε tablet εμφανίζονται 2 κάρτες ανά σειρά */
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+@media (max-width: 600px) {
+    .testimonials-container {
+        /* Σε κινητά εμφανίζεται 1 κάρτα ανά σειρά */
+        grid-template-columns: 1fr; 
+    }
+}
+/* src/pages/Home.css (Προσθήκη στο τέλος) */
+
+/* --- DIPLOMA CATEGORIES SECTION --- */
+
+.diploma-categories-section {
+    padding: 80px 20px;
+    background-color: #f4f4f4; /* Ανοιχτό φόντο για αντίθεση */
+}
+
+.diploma-categories-section .page-header h1 {
+    color: #27251e;
+}
+
+.categories-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    display: grid;
+    /* 3 στήλες ίσου μεγέθους */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    padding-top: 30px;
+}
+
+.category-card {
+    background-color: #ffffff; 
+    border-radius: 8px;
+    overflow: hidden; /* Κρατάει την εικόνα μέσα στα όρια */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex; /* Χρησιμοποιούμε flex για το εσωτερικό περιεχόμενο */
+    flex-direction: column;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 200px; /* Σταθερό ύψος για τις εικόνες */
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Επιτρέπει στο περιεχόμενο να πιάνει όλο τον χώρο */
+}
+
+.card-content h3 {
+    color: #30a5cc;
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.card-content .subtitle {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.card-content p {
+    color: #444;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.card-cta-button {
+    background-color: #30a5cc;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin-top: auto; /* Το "κολλάει" στο κάτω μέρος */
+}
+
+.card-cta-button:hover {
+    background-color: #2481a3;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 992px) {
+    .categories-grid {
+        /* Σε tablet 2 στήλες */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .categories-grid {
+        /* Σε κινητά 1 στήλη */
+        grid-template-columns: 1fr;
+    }
+}

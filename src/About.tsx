@@ -67,10 +67,11 @@ const About: React.FC = () => {
           </p>
         </section>
       </div>
-
-      
     </div>
+ 
   );
+ 
 };
+  
 
 export default About;
