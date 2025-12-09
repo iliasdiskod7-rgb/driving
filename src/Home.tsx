@@ -1,9 +1,9 @@
 // src/pages/Home.tsx (Προσθήκη της νέας ενότητας)
 import HeroSlider from './HeroSlider';
-import React from 'react';
 import { Link } from 'react-router-dom';
 // ... (άλλα imports) ...
 import './Home.css'; // Θα χρειαστούμε styling
+import { useInView } from './useInview';
 
 
 // Δεδομένα για τα 4 πλεονεκτήματα
@@ -72,13 +72,18 @@ const features = [
 ];
 
 const Home: React.FC = () => {
+  const {ref:chooseUsRef, inView: chooseUsInView}=useInView();
+  const { ref: testimonialsRef, inView: testimonialsInView } = useInView();
+  const{ref: diplomaRef, inView: diplomaInView}=useInView();
   return (
     <div>
      <HeroSlider/>
      
       
       {/* 2. ΓΙΑΤΙ ΝΑ ΜΑΣ ΕΠΙΛΕΞΕΤΕ; */}
-      <section className="why-choose-us-section">
+      <section 
+      className={`why-choose-us-section ${chooseUsInView ? 'is-visible' : ''}`}
+        ref={chooseUsRef}>
         <div className="section-content-wrapper">
 
           {/* Αριστερό Μέρος: Τίτλος & Τετράγωνα */}
@@ -108,7 +113,8 @@ const Home: React.FC = () => {
         </div>
       </section>
       {/* 4. ΚΑΤΗΓΟΡΙΕΣ ΔΙΠΛΩΜΑΤΟΣ (3 Blocks) */}
-      <section className="diploma-categories-section">
+      <section  className={`diploma-categories-section ${diplomaInView ? 'is-visible' : ''}`}
+        ref={diplomaRef}>
         <div className="page-header">
           <h1>Κατηγορίες Διπλώματος</h1>
           <p>Επιλέξτε την κατηγορία που σας ενδιαφέρει:</p>
@@ -133,7 +139,8 @@ const Home: React.FC = () => {
         </div>
       </section>
       {/* 3. ΚΡΙΤΙΚΕΣ (TESTIMONIALS) */}
-      <section className="testimonials-section">
+      <section className={`testimonials-section ${testimonialsInView ? 'is-visible' : ''}`}
+        ref={testimonialsRef}>
         <div className="page-header">
           <h1>Τι είπαν για εμάς 🌟</h1>
         </div>
