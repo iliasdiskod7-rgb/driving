@@ -57,5 +57,29 @@
   max-width: 800px;
   padding: 20px;
 }
+/* src/components/HeroSlider/HeroSlider.css */
 
+.cta-button {
+    /* Βασική εμφάνιση (Background & Text) */
+    background-color: #30a5cc; /* Το μπλε χρώμα */
+    color: white;
+    padding: 12px 30px;
+    
+    /* Σημαντικό για να μοιάζει με κουμπί */
+    display: inline-block; 
+    
+    /* Σημαντικό για να αφαιρεθεί η υπογράμμιση του Link */
+    text-decoration: none; 
+    
+    /* Πρόσθετα styles */
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer; /* Το Link δεν έχει default cursor: pointer */
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #2481a3;
+}
 /* ... Τα υπόλοιπα styles για h2, h1, p, cta-button, slider-dots, dot παραμένουν ίδια ... */

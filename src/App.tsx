@@ -11,6 +11,11 @@ import ScrollToTop from './ScrollToTop';
 import Moto from './Moto';
 import Car from './Car';
 import Pro from './Pro';
+import Services from './Services';
+import AM from './AM';
+import A1 from './A1';
+import A2 from './A2';
+import A from './A';
 function App() {
   return (
     <Router>
@@ -27,6 +32,11 @@ function App() {
       <Route path="/services/moto" element={<Moto />} />
       <Route path="/services/car" element={<Car />} />
       <Route path="/services/pro" element={<Pro />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/services/moto/am" element={<AM />} />
+      <Route path="/services/moto/a1" element={<A1 />} />
+      <Route path="/services/moto/a2" element={<A2 />} />
+      <Route path="/services/moto/a" element={<A />} />
 
     </Routes>
       </main>

@@ -7,3 +7,25 @@ body {
   margin: 0;
   padding: 0;
 }
+/* src/index.css ή src/App.css (ΠΡΟΣΘΗΚΗ ΓΙΑ ΤΟ FLASH EFFECT) */
+
+/* 1. Ορίζουμε το Keyframe του Flash */
+@keyframes page-flash {
+    0% { background-color: rgba(255, 255, 255, 0.8); } /* Πολύ φωτεινό */
+    100% { background-color: rgba(255, 255, 255, 0); } /* Διαφανές */
+}
+
+/* 2. Κλάση Flash Overlay */
+.flash-active::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999; /* Πολύ ψηλό για να είναι πάνω από όλα */
+    pointer-events: none; /* Επιτρέπει τα κλικ από κάτω */
+    
+    /* Εφαρμόζουμε το animation */
+    animation: page-flash 0.5s ease-out forwards; 
+}

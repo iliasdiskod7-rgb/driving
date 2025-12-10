@@ -1,6 +1,8 @@
 // src/components/HeroSlider/HeroSlider.tsx
 import React, { useState, useEffect,useMemo,useRef } from 'react';
 import './HeroSlider.css';
+import { Link } from 'react-router-dom'; // <-- ΚΡΙΣΙΜΟ: Εισαγωγή του Link
+
 
 // 1. Ορίζουμε τις διαφάνειες (slides)
 // Προσοχή: Εδώ θα βάλετε τις πραγματικές διαδρομές των εικόνων σας
@@ -10,21 +12,24 @@ const slides = [
     image: './photos/car1.jpg', // Πρέπει να υπάρχει στο φάκελο public/images
     title: 'Δίπλωμα οδήγησης, από τα 17!',
     subtitle: 'Απονυπομονούμε να οδηγήσεις αυτοκίνητο πριν από τα 18 σου χρόνια.',
-    cta: 'ΜΑΘΕΤΕ ΠΕΡΙΣΣΟΤΕΡΑ'
+    cta: 'ΜΑΘΕΤΕ ΠΕΡΙΣΣΟΤΕΡΑ',
+    path: '/services/car/b'
   },
   { 
     id: 2, 
     image: './photos/car2.jpg', 
     title: 'Μάθετε για εμάς', 
     subtitle: 'Εκπαιδευτές με πολυετή εμπειρία σε όλες τις κατηγορίες.',
-    cta: 'ΔΕΙΤΕ ΤΙΣ ΥΠΗΡΕΣΙΕΣ'
+    cta: 'ΔΕΙΤΕ ΤΙΣ ΥΠΗΡΕΣΙΕΣ',
+    path:'/about'
   },
   {
     id:3,
     image:'./photos/scouter.jpg',
     title:'H ευκολία της μετακίνησης που ψάχνεται',
     subtitle:'Ελάτε να μάθετε να οδηγείτε με ασφάλεια και αυτοπεποίθηση.',
-    cta:'ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ'
+    cta:'ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ',
+    path:'/contact'
    }
   // Προσθέστε όσα slides θέλετε
 ];
@@ -95,7 +100,9 @@ const containerStyle = {
             <div className="hero-content">
               <h1>{slide.title}</h1>
               <p>{slide.subtitle}</p>
-              <button className="cta-button">{slide.cta}</button>
+              <Link to={slide.path} className="cta-button">
+                    {slide.cta}
+                </Link>
             </div>
           </div>
         ))}

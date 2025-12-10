@@ -31,10 +31,10 @@ const servicesLinks = {
       title: 'Μοτοσυκλέτες', 
       path: '/services/moto', 
       nestedCategories: [
-        { title: 'ΑΜ', path: '/services/am' },
-        { title: 'Α1', path: '/services/a1' },
-        { title: 'Α2', path: '/services/a2' },
-        { title: 'Α', path: '/services/a' },
+        { title: 'ΑΜ', path: '/services/moto/am' },
+        { title: 'Α1', path: '/services/moto/a1' },
+        { title: 'Α2', path: '/services/moto/a2' },
+        { title: 'Α', path: '/services/moto/a' },
       ],
     },
     { 

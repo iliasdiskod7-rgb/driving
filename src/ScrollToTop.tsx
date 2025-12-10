@@ -10,6 +10,15 @@ const ScrollToTop: React.FC = () => {
     useEffect(() => {
         // Μετακινεί το παράθυρο στην κορυφή (top: 0, left: 0)
         window.scrollTo(0, 0);
+        document.body.classList.add('flash-active');
+        const timer = setTimeout(() => {
+            document.body.classList.remove('flash-active');
+        }, 100);
+        return () => {
+             // Επίσης, αν το component αφαιρεθεί, διασφαλίζουμε ότι η κλάση αφαιρείται
+             document.body.classList.remove('flash-active');
+             clearTimeout(timer);
+        }
     }, [pathname]); // Ενεργοποιείται κάθε φορά που αλλάζει το pathname
     useEffect(() => {
         // 2. Απενεργοποίηση scroll restoration του BROWSER
