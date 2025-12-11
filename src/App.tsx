@@ -16,6 +16,11 @@ import AM from './AM';
 import A1 from './A1';
 import A2 from './A2';
 import A from './A';
+import B from './B';
+import BE from './BE';
+import C from './C';
+import CE from './CE';
+import D from './D';
 function App() {
   return (
     <Router>
@@ -37,6 +42,11 @@ function App() {
       <Route path="/services/moto/a1" element={<A1 />} />
       <Route path="/services/moto/a2" element={<A2 />} />
       <Route path="/services/moto/a" element={<A />} />
+      <Route path="/services/car/b" element={<B />} />
+      <Route path="/services/car/be" element={<BE />} />
+      <Route path="/services/pro/c" element={<C />} />
+      <Route path="/services/pro/ce" element={<CE />} />
+      <Route path="/services/pro/d" element={<D />} />
 
     </Routes>
       </main>

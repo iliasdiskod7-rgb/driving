@@ -3,6 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Moto.css'; // Το CSS αρχείο μας
+import { useInView } from './useInview'
 
 // Δεδομένα για τις 4 υποκατηγορίες μοτοσυκλέτας
 const motoCategories = [
@@ -11,32 +12,33 @@ const motoCategories = [
         subtitle: 'Δίπλωμα Μοτοποδηλάτου',
         description: 'Οδήγηση δίκυκλων έως 50cc ή ελαφρών τετράκυκλων (γουρούνες) από 16 ετών.',
         image: '/photos/AM.jpg', // Placeholder
-        path: '/services/am',
+        path: '/services/moto/am',
     },
     {
         title: 'Κατηγορία Α1',
         subtitle: 'Δίπλωμα 125cc',
         description: 'Οδήγηση μοτοσυκλετών με κυβισμό έως 125cc και ισχύ έως 11kW, από 18 ετών.',
         image: '/photos/A1.jpg', // Placeholder
-        path: '/services/a1',
+        path: '/services/moto/a1',
     },
     {
         title: 'Κατηγορία Α2',
         subtitle: 'Δίπλωμα Μεσαίας Ισχύος',
         description: 'Οδήγηση μοτοσυκλετών με ισχύ έως 35kW (47 ίππους), από 20 ετών.',
         image: '/photos/A2.jpg', // Placeholder
-        path: '/services/a2',
+        path: '/services/moto/a2',
     },
     {
         title: 'Κατηγορία Α',
         subtitle: 'Δίπλωμα Απεριόριστης Ισχύος',
         description: 'Οδήγηση όλων των μοτοσυκλετών (άνω των 35kW), από 24 ετών ή μετά από 2 χρόνια Α2.',
         image: '/photos/A.jpg', // Placeholder
-        path: '/services/a',
+        path: '/services/moto/a',
     },
 ];
 
 const Moto: React.FC = () => {
+    const {ref:chooseUsRef, inView: chooseUsInView}=useInView();
     return (
     
         <div className="moto-page-wrapper">
@@ -56,7 +58,8 @@ const Moto: React.FC = () => {
            
             
             {/* 2. ΕΝΟΤΗΤΑ ΥΠΟΚΑΤΗΓΟΡΙΩΝ (4 Blocks Grid) */}
-            <section className="moto-categories-section">
+            <section  className={`moto-categories-section ${chooseUsInView ? 'is-visible' : ''}`}
+        ref={chooseUsRef}>
                 <div className="categories-header">
                     <h2>Οι Κατηγορίες Δικύκλων</h2>
                     <p>Από μικρά μοτοποδήλατα (ΑΜ) έως μοτοσυκλέτες απεριόριστης ισχύος (Α).</p>

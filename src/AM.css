@@ -96,7 +96,10 @@
     color: #27251e;
     margin-top: 0;
 }
-
+.info-block p {
+    color: #27251e;
+    margin-top: 0;
+}
 /* --- 3. SIDEBAR (ΚΟΣΤΟΣ) --- */
 
 .sidebar-cost {

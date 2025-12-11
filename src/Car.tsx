@@ -11,14 +11,14 @@ const carCategories = [
         subtitle: 'Δίπλωμα Ιδιωτικής Χρήσης (Ι.Χ.)',
         description: 'Οδήγηση αυτοκινήτων με μέγιστη μάζα έως 3.500 κιλά και 8+1 θέσεις, από 18 ετών.',
         image: '/photos/car8.jpg', // Placeholder
-        path: '/services/b',
+        path: '/services/car/b',
     },
     {
         title: 'Κατηγορία ΒΕ',
         subtitle: 'Ρυμουλκούμενο (Τρέιλερ)',
         description: 'Οδήγηση οχημάτων Β κατηγορίας με συζευγμένο ρυμουλκούμενο (πάνω από 750kg) ή αρθρωτό σύνολο (πάνω από 3.500kg).',
         image: '/photos/caravan.jpg', // Placeholder
-        path: '/services/be',
+        path: '/services/car/be',
     }
 ];
 

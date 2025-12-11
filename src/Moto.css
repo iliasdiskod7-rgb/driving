@@ -181,3 +181,20 @@
         grid-template-columns: 1fr; /* 1 στήλη σε κινητά */
     }
 }
+/* src/pages/Moto.css (ΠΡΟΣΘΗΚΗ ΓΙΑ ANIMATION) */
+
+/* Αρχική κατάσταση: Κρυφό και μετατοπισμένο κάτω */
+.moto-categories-section {
+    /* ... (τα άλλα styles του section παραμένουν) ... */
+    
+    opacity: 0; /* Αόρατο */
+    transform: translateY(50px); /* Μετακινημένο 50px προς τα κάτω */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Ομαλή μετάβαση */
+}
+   /* src/pages/Moto.css (ΠΡΟΣΘΗΚΗ ΓΙΑ ANIMATION) */
+
+/* Κατάσταση "Ορατό" (μόλις η κλάση προστεθεί) */
+.moto-categories-section.is-visible {
+    opacity: 1; /* Γίνεται ορατό */
+    transform: translateY(0); /* Επιστρέφει στην αρχική θέση */
+}

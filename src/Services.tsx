@@ -11,7 +11,7 @@ const mainCategories = [
         subtitle: 'Κατηγορίες ΑΜ, Α1, Α2, Α',
         description: 'Μάθετε να οδηγείτε με ασφάλεια δίκυκλα, από 50cc έως μοτοσυκλέτες απεριόριστης ισχύος.',
         image: '/photos/moto1.jpg', // Placeholder
-        path: '/services/moto.jpg',
+        path: '/services/moto',
         bgColor: '#30a5cc', // Μπλε
     },
     {

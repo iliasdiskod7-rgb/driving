@@ -1,5 +1,7 @@
 /* src/pages/Contact.css */
-
+body{
+    background-color:white;
+}
 .contact-page-wrapper {
     margin: 0 auto;
     padding: 20px;
@@ -51,6 +53,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box; /* Περιλαμβάνει padding στο πλάτος */
+    background-color: white;
 }
 
 .submit-button {
@@ -74,9 +77,10 @@
     flex: 1;
     min-width: 250px;
     padding: 30px;
-    background-color: #fff;
+    background-color: #6e6e6e;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
 }
 
 .info-item {
@@ -132,4 +136,50 @@
     font-size: 1.1em;
     max-width: 600px;
     margin: 0 auto;
+}
+/* src/pages/Contact.css (Για τα μηνύματα επιτυχίας/αποτυχίας) */
+
+.submission-success-message {
+    padding: 50px 30px;
+    background-color: #e6f7ff; /* Πολύ ανοιχτό μπλε */
+    border: 2px solid #30a5cc;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submission-success-message h2 {
+    color: #30a5cc;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.submission-success-message p {
+    color: #444;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.form-error-message {
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #fdd;
+    border: 1px solid #c00;
+    color: #c00;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.submission-success-message .submit-button {
+    /* Επαναχρησιμοποιούμε το submit button style */
+    margin-top: 30px;
+}
+/* src/pages/Contact.css */
+
+.input-error-message {
+    color: #c00; /* Έντονο κόκκινο */
+    font-size: 0.9em;
+    margin-top: 5px;
+    font-weight: bold;
 }

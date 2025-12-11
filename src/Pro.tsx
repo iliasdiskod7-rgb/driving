@@ -11,21 +11,21 @@ const proCategories = [
         subtitle: 'Φορτηγά (Truck)',
         description: 'Οδήγηση οχημάτων με μέγιστη μάζα άνω των 3.500 κιλών και 8+1 θέσεις, από 21 ετών.',
         image: '/photos/truck1.jpg', // Placeholder
-        path: '/services/c',
+        path: '/services/pro/c',
     },
     {
         title: 'Κατηγορία CE',
         subtitle: 'Νταλίκες (Με Ρυμουλκούμενο)',
         description: 'Οδήγηση Φορτηγών (C) με συζευγμένο ρυμουλκούμενο. Απαραίτητο για νταλίκες και βαρέα συρμούς.',
         image: '/photos/truck2.jpg', // Placeholder
-        path: '/services/ce',
+        path: '/services/pro/ce',
     },
     {
         title: 'Κατηγορία D',
         subtitle: 'Λεωφορεία (Bus)',
         description: 'Οδήγηση οχημάτων με περισσότερες από 8+1 θέσεις, από 24 ετών. Απαραίτητο για μεταφορά επιβατών.',
         image: '/photos/bus.jpg', // Placeholder
-        path: '/services/d',
+        path: '/services/pro/d',
     }
 ];
 

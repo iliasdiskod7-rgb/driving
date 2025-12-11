@@ -41,17 +41,17 @@ const servicesLinks = {
       title: 'Αυτοκίνητο', 
       path: '/services/car', 
       nestedCategories: [
-        { title: 'Β', path: '/services/b' },
-        { title: 'ΒΕ', path: '/services/be' },
+        { title: 'Β', path: '/services/car/b' },
+        { title: 'ΒΕ', path: '/services/car/be' },
       ],
     },
     { 
       title: 'Επαγγελματικά', 
       path: '/services/pro', 
       nestedCategories: [
-        { title: 'C', path: '/services/c' },
-        { title: 'D', path: '/services/d' },
-        { title: 'CE', path: '/services/ce' },
+        { title: 'C', path: '/services/pro/c' },
+        { title: 'D', path: '/services/pro/d' },
+        { title: 'CE', path: '/services/pro/ce' },
       ],
     },
   ],
